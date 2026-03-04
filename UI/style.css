@@ -791,70 +791,61 @@ html {
 
 
 
+
 /* ========================================
-   RESEARCH SECTION - PLAIN CSS
+   RESEARCH PAGE STYLES
    Theme: Black & Blue (Laicena)
    ======================================== */
 
-.research-section {
+/* Navigation Link Active State */
+.nav-link {
+    color: #9CA3AF;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: #60A5FA;
+}
+
+/* Research Page Container */
+.research-page {
+    padding-top: 5rem;
     background-color: #050505;
-    padding: 6rem 1.5rem;
-    position: relative;
 }
 
-.research-container {
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-/* ========================================
-   Research Header
-   ======================================== */
+/* Page Header */
 .research-header {
-    margin-bottom: 5rem;
-    padding-bottom: 3rem;
+    padding: 6rem 0 4rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .research-title {
     font-size: 3.5rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
 }
-
-@media (max-width: 640px) {
-    .research-title {
-        font-size: 2.5rem;
-    }
-}
-
 .research-intro {
-    max-width: 48rem;
-}
-
-.intro-text {
     font-size: 1.125rem;
     line-height: 1.7;
     color: #9CA3AF;
+    max-width: 48rem;
     margin-bottom: 1.5rem;
 }
-
-.research-teams-links {
+.research-teams-nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem;
 }
-
 .teams-label {
     font-size: 0.875rem;
     color: #6B7280;
     font-weight: 500;
 }
-
-.team-link {
+.team-nav-link {
     font-size: 0.875rem;
     color: #9CA3AF;
     text-decoration: none;
@@ -862,35 +853,23 @@ html {
     border-radius: 0.25rem;
     transition: all 0.2s ease;
 }
-
-.team-link:hover {
+.team-nav-link:hover {
     color: #60A5FA;
     background-color: rgba(59, 130, 246, 0.1);
 }
 
-/* ========================================
-   Research Teams Grid
-   ======================================== */
-.teams-section {
+/* Teams Grid Section */
+.teams-grid-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.teams-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin-bottom: 6rem;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-@media (min-width: 640px) {
-    .teams-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .teams-section {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
+@media (min-width: 640px) { .teams-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .teams-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .team-card {
     padding: 1.5rem;
@@ -899,57 +878,44 @@ html {
     border-radius: 0.75rem;
     transition: all 0.3s ease;
 }
-
 .team-card:hover {
     background-color: rgba(255, 255, 255, 0.05);
     border-color: rgba(59, 130, 246, 0.3);
     transform: translateY(-2px);
 }
-
-.team-name {
+.team-card-title {
     font-size: 1.125rem;
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 0.75rem;
 }
-
-.team-description {
+.team-card-desc {
     font-size: 0.875rem;
     line-height: 1.6;
     color: #9CA3AF;
 }
 
-/* ========================================
-   Featured Papers Section
-   ======================================== */
-.featured-papers {
-    margin-bottom: 6rem;
-    padding-bottom: 4rem;
+/* Featured Papers Section */
+.featured-papers-section {
+    padding: 5rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .featured-paper {
-    margin-bottom: 3rem;
     padding: 2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+.featured-paper:last-of-type { border-bottom: none; }
 
-.featured-paper:last-of-type {
-    border-bottom: none;
-}
-
-/* Large Featured Paper with Media */
+/* Large Featured Paper */
 .featured-paper.featured-large {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-bottom: 4rem;
-    padding: 2.5rem;
+    padding: 2rem;
     background-color: rgba(255, 255, 255, 0.02);
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 @media (min-width: 768px) {
     .featured-paper.featured-large {
         grid-template-columns: 1.2fr 1fr;
@@ -957,58 +923,43 @@ html {
     }
 }
 
-.paper-media {
+/* Media Card */
+.paper-media { border-radius: 0.75rem; overflow: hidden; }
+.media-card {
     position: relative;
-    border-radius: 0.75rem;
-    overflow: hidden;
-}
-
-.media-placeholder {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(15, 23, 42, 0.8) 100%);
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0.9) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0.75rem;
 }
-
-.video-placeholder {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0.9) 100%);
-}
-
-.play-button {
-    width: 5rem;
-    height: 5rem;
-    background-color: rgba(255, 255, 255, 0.95);
+.play-btn {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: rgba(255,255,255,0.95);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-
-.play-button:hover {
+.play-btn:hover {
     transform: scale(1.1);
     background-color: #3B82F6;
 }
-
-.play-button svg {
-    width: 2rem;
-    height: 2rem;
+.play-btn svg {
+    width: 1.75rem;
+    height: 1.75rem;
     color: #050505;
     margin-left: 0.25rem;
 }
-
-.media-overlay {
+.media-tag {
     position: absolute;
     top: 1rem;
     left: 1rem;
-}
-
-.media-category {
-    background-color: rgba(59, 130, 246, 0.9);
+    background-color: rgba(59,130,246,0.9);
     color: #ffffff;
     padding: 0.375rem 0.875rem;
     border-radius: 2rem;
@@ -1018,55 +969,38 @@ html {
     letter-spacing: 0.05em;
 }
 
-.paper-content {
-    display: flex;
-    flex-direction: column;
-}
-
+/* Paper Content */
+.paper-body { display: flex; flex-direction: column; }
 .paper-meta {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
 }
-
-.paper-category {
+.paper-cat {
     font-size: 0.875rem;
     font-weight: 600;
     color: #3B82F6;
 }
-
 .paper-date {
     font-size: 0.875rem;
     color: #6B7280;
 }
-
-.paper-title {
+.paper-headline {
     font-size: 1.75rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 1rem;
     line-height: 1.3;
 }
-
-@media (max-width: 640px) {
-    .paper-title {
-        font-size: 1.5rem;
-    }
-}
-
-.featured-paper.featured-large .paper-title {
-    font-size: 2rem;
-}
-
-.paper-excerpt {
+.featured-paper:not(.featured-large) .paper-headline { font-size: 1.5rem; }
+.paper-summary {
     font-size: 1rem;
     line-height: 1.7;
     color: #9CA3AF;
     margin-bottom: 1.5rem;
 }
-
-.paper-link {
+.paper-cta {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -1074,68 +1008,40 @@ html {
     font-weight: 600;
     text-decoration: none;
     padding: 0.75rem 1.25rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 0.5rem;
     width: fit-content;
     transition: all 0.3s ease;
 }
-
-.paper-link:hover {
+.paper-cta:hover {
     background-color: #3B82F6;
     border-color: #3B82F6;
     transform: translateX(4px);
 }
-
-.paper-link svg {
+.paper-cta svg {
     width: 1.25rem;
     height: 1.25rem;
     transition: transform 0.3s ease;
 }
+.paper-cta:hover svg { transform: translateX(4px); }
 
-.paper-link:hover svg {
-    transform: translateX(4px);
-}
-
-/* Regular Featured Papers */
-.featured-paper:not(.featured-large) {
-    max-width: 48rem;
-}
-
-.featured-paper:not(.featured-large) .paper-title {
-    font-size: 1.5rem;
-}
-
-/* ========================================
-   Publications Section
-   ======================================== */
-.publications-section {
-    margin-bottom: 6rem;
-}
-
-.publications-title {
+/* Publications Section */
+.publications-section { padding: 5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.publications-head {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 2rem;
 }
-
-.publications-table-wrapper {
-    overflow-x: auto;
-    margin-bottom: 2rem;
-}
-
-.publications-table {
+.table-wrap { overflow-x: auto; margin-bottom: 2rem; }
+.pub-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.95rem;
 }
-
-.publications-table thead {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.table-header {
+.pub-table thead { border-bottom: 2px solid rgba(255,255,255,0.1); }
+.th-date, .th-cat, .th-title {
     text-align: left;
     padding: 1rem 1.5rem;
     font-weight: 600;
@@ -1144,61 +1050,30 @@ html {
     letter-spacing: 0.05em;
     font-size: 0.75rem;
 }
-
-.table-header:first-child {
-    width: 15%;
-}
-
-.table-header:nth-child(2) {
-    width: 20%;
-}
-
-.publication-row {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.th-date { width: 15%; }
+.th-cat { width: 20%; }
+.pub-row {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     transition: background-color 0.2s ease;
 }
-
-.publication-row:hover {
-    background-color: rgba(255, 255, 255, 0.02);
-}
-
-.table-cell {
-    padding: 1.25rem 1.5rem;
-    vertical-align: top;
-}
-
-.date-cell {
-    color: #6B7280;
-    font-size: 0.875rem;
-}
-
-.category-cell {
-    color: #9CA3AF;
-    font-size: 0.875rem;
-}
-
-.title-cell {
-    color: #ffffff;
-}
-
-.publication-link {
+.pub-row:hover { background-color: rgba(255,255,255,0.02); }
+.td-date, .td-cat, .td-title { padding: 1.25rem 1.5rem; vertical-align: top; }
+.td-date { color: #6B7280; font-size: 0.875rem; }
+.td-cat { color: #9CA3AF; font-size: 0.875rem; }
+.td-title { color: #ffffff; }
+.pub-link {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.2s ease;
-    display: inline-block;
 }
-
-.publication-link:hover {
-    color: #60A5FA;
-}
-
-.see-more-button {
+.pub-link:hover { color: #60A5FA; }
+.more-pubs-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.875rem 1.75rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 0.5rem;
     color: #ffffff;
     font-size: 0.95rem;
@@ -1206,41 +1081,32 @@ html {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.see-more-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(59, 130, 246, 0.5);
+.more-pubs-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: rgba(59,130,246,0.5);
 }
-
-.see-more-button svg {
+.more-pubs-btn svg {
     width: 1.25rem;
     height: 1.25rem;
     transition: transform 0.3s ease;
 }
+.more-pubs-btn:hover svg { transform: translateY(2px); }
 
-.see-more-button:hover svg {
-    transform: translateY(2px);
-}
-
-/* ========================================
-   Join Team CTA Section
-   ======================================== */
-.join-team-section {
+/* Join CTA Section */
+.join-cta-section {
+    padding: 4rem 0;
     background-color: #020202;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 1rem;
-    padding: 4rem 2rem;
     text-align: center;
 }
-
-.join-title {
+.join-head {
     font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 2rem;
 }
-
-.join-button {
+.join-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -1252,96 +1118,43 @@ html {
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.join-button:hover {
+.join-btn:hover {
     background-color: #3B82F6;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(59,130,246,0.3);
 }
-
-.join-button svg {
+.join-btn svg {
     width: 1.25rem;
     height: 1.25rem;
     transition: transform 0.3s ease;
 }
+.join-btn:hover svg { transform: translateX(4px); }
 
-.join-button:hover svg {
-    transform: translateX(4px);
-}
-
-/* ========================================
-   Responsive Adjustments
-   ======================================== */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .research-section {
-        padding: 4rem 1rem;
-    }
-    
-    .teams-section {
-        gap: 1rem;
-    }
-    
-    .featured-paper.featured-large {
-        padding: 1.5rem;
-    }
-    
-    .table-header,
-    .table-cell {
-        padding: 1rem;
-    }
-    
-    .join-title {
-        font-size: 2rem;
-    }
+    .research-title { font-size: 2.5rem; }
+    .teams-grid { gap: 1rem; }
+    .featured-paper.featured-large { padding: 1.5rem; }
+    .paper-headline { font-size: 1.5rem; }
+    .th-date, .th-cat, .th-title,
+    .td-date, .td-cat, .td-title { padding: 1rem; }
+    .join-head { font-size: 2rem; }
 }
 
-/* ========================================
-   Smooth Animations
-   ======================================== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Smooth Fade-In Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
-.team-card,
-.featured-paper,
-.publication-row {
-    animation: fadeIn 0.6s ease-out forwards;
+.team-card, .featured-paper, .pub-row {
+    animation: fadeInUp 0.6s ease-out forwards;
 }
-
-/* Stagger animations */
 .team-card:nth-child(1) { animation-delay: 0.1s; }
 .team-card:nth-child(2) { animation-delay: 0.2s; }
 .team-card:nth-child(3) { animation-delay: 0.3s; }
 .team-card:nth-child(4) { animation-delay: 0.4s; }
 
-/* ========================================
-   Accessibility: Focus States
-   ======================================== */
-.team-link:focus,
-.paper-link:focus,
-.publication-link:focus,
-.see-more-button:focus,
-.join-button:focus {
-    outline: 2px solid #3B82F6;
-    outline-offset: 2px;
-}
 
-/* Remove default outline for mouse users */
-.team-link:focus:not(:focus-visible),
-.paper-link:focus:not(:focus-visible),
-.publication-link:focus:not(:focus-visible),
-.see-more-button:focus:not(:focus-visible),
-.join-button:focus:not(:focus-visible) {
-    outline: none;
-}
