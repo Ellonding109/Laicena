@@ -7,14 +7,15 @@
     
     <!-- 1. TAILWIND CSS (For Layout & Typography) -->
     <!-- This allows us to style quickly using classes like 'flex', 'text-blue-500', etc. -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     
     <!-- 2. GOOGLE FONTS (Inter for that clean, scientific look) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="googlefonts.css" rel="stylesheet">
 
     <!--styles -->
    
     <link rel="stylesheet" href="style.css">
+    <script src=tailwind.js></script>
 </head>
 <body>
 
@@ -76,8 +77,7 @@
     </div>
 </header>
 
-    <!-- HERO SECTION (Placeholder to enable scrolling) -->
-    <!-- 'min-h-screen' ensures it takes full screen height so you can test scroll -->
+
     <section class="relative min-h-screen flex items-center justify-center pt-20">
         <div class="text-center max-w-4xl px-6">
             <!-- Main Headline -->
@@ -104,12 +104,7 @@
         </div>
     </section>
 
-    <!-- EXTRA SPACE TO ALLOW SCROLLING FOR TESTING
-    <section class="h-screen bg-black/50 flex items-center justify-center border-t border-white/5">
-        <p class="text-gray-500">Scroll down to test the header logo effect...</p>
-    </section> -->
-
-
+    
 
     <!-- ABOUT SECTION -->
 <section id="about" class="about-section">
